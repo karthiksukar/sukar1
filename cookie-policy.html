@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy | SUKAR GREEN ENERGY</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A1931',
+                        'secondary': '#F8F8F8',
+                        'accent': '#D4AF37',
+                        'text-dark': '#333333',
+                        'text-light': '#F8F8F8',
+                        'success': '#2E7D32',
+                        'light-green': '#84CC16',
+                    },
+                    fontFamily: {
+                        'heading': ['Lora', 'Georgia', 'serif'],
+                        'body': ['Lora', 'Georgia', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8F8F8;
+            color: #333333;
+            font-family: 'Lora', 'Georgia', 'serif';
+            font-weight: 400;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', 'Georgia', 'serif';
+            font-weight: 700;
+            color: #0A1931;
+        }
+        .nav-link.active {
+            color: #2E7D32;
+            position: relative;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #2E7D32;
+        }
+        .nav-link-mobile.active {
+            color: #84CC16 !important;
+        }
+        .prose {
+            max-width: 80ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .prose h1.page-title {
+             color: #FFFFFF;
+             text-align: center;
+             margin-bottom: 0;
+        }
+        .prose h2 {
+            font-size: 1.875rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+        .prose p, .prose ul, .prose ol {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+        .prose ul, .prose ol {
+            list-style-position: inside;
+        }
+        .prose ul {
+            list-style-type: disc;
+        }
+        .prose ol {
+            list-style-type: decimal;
+        }
+        .prose a {
+            color: #2E7D32;
+            text-decoration: underline;
+        }
+        .prose a:hover {
+            color: #84CC16;
+        }
+    </style>
+</head>
+<body class="bg-secondary font-body">
+
+    <!-- Header -->
+    <header id="main-header" class="text-white absolute top-5 left-0 right-0 z-40 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="flex items-center z-50">
+                <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-10" style="height: 40px;" onerror="this.onerror=null; this.src='https://placehold.co/200x40/0A1931/FFFFFF?text=SUKAR+GREEN+ENERGY';">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Home</a>
+                <a href="about.html" class="nav-link text-lg hover:text-success transition-colors duration-300">About Us</a>
+                <a href="services.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Services</a>
+                <a href="projects.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Projects</a>
+                <a href="contact.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="p-2 z-50 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-primary z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col">
+        <div class="flex justify-between items-center p-4 border-b border-gray-700 flex-shrink-0">
+             <a href="index.html" class="flex items-center">
+                <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/200x40/0A1931/FFFFFF?text=SUKAR';">
+            </a>
+            <button id="close-menu-button" class="p-2 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <nav class="flex flex-col items-start w-full pt-8">
+            <a href="index.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Home</a>
+            <a href="about.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">About Us</a>
+            <a href="services.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Services</a>
+            <a href="projects.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Projects</a>
+            <a href="contact.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left border-b-0">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Page Title Banner -->
+        <div id="hero-section" class="relative bg-primary h-64 flex items-center justify-center">
+             <div class="prose">
+                <h1 class="text-4xl md:text-5xl font-bold page-title">Cookie Policy</h1>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="prose bg-white p-8 md:p-12 rounded-lg shadow-lg -mt-32 relative z-10">
+                    <p><strong>Last updated: August 07, 2024</strong></p>
+                    <p>This Cookie Policy explains what cookies are and how we use them. You should read this policy to understand what cookies are, how we use them, the types of cookies we use, the information we collect using cookies, how that information is used, and how to control your cookie preferences. For further information on how we use, store, and keep your personal data secure, see our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+                    
+                    <h2>What Are Cookies?</h2>
+                    <p>Cookies are small text files that are used to store small pieces of information. They are stored on your device when the website is loaded on your browser. These cookies help us make the website function properly, make it more secure, provide a better user experience, understand how the website performs, and analyze what works and where it needs improvement.</p>
+                    
+                    <h2>How Do We Use Cookies?</h2>
+                    <p>As with most online services, our website uses first-party and third-party cookies for several purposes. First-party cookies are mostly necessary for the website to function the right way, and they do not collect any of your personally identifiable data.</p>
+                    <p>The third-party cookies used on our website are mainly for understanding how the website performs, how you interact with our website, keeping our services secure, providing advertisements that are relevant to you, and all in all providing you with a better and improved user experience and helping to speed up your future interactions with our website.</p>
+                    
+                    <h2>What Types of Cookies Do We Use?</h2>
+                    <ul>
+                        <li><strong>Essential Cookies:</strong> Some cookies are essential for you to be able to experience the full functionality of our site. They allow us to maintain user sessions and prevent any security threats. They do not collect or store any personal information.</li>
+                        <li><strong>Statistics Cookies:</strong> These cookies store information like the number of visitors to the website, the number of unique visitors, which pages of the website have been visited, the source of the visit, etc. This data helps us understand and analyze how well the website performs and where it needs improvement.</li>
+                        <li><strong>Functional Cookies:</strong> These are the cookies that help certain non-essential functionalities on our website. These functionalities include embedding content like videos or sharing content of the website on social media platforms.</li>
+                        <li><strong>Preference Cookies:</strong> These cookies help us store your settings and browsing preferences like language preferences so that you have a better and more efficient experience on future visits to the website.</li>
+                    </ul>
+
+                    <h2>How Can I Control My Cookie Preferences?</h2>
+                    <p>Should you decide to change your preferences later through your browsing session, you can click on the "Privacy & Cookie Policy" tab on your screen. This will display the consent notice again, enabling you to change your preferences or withdraw your consent entirely.</p>
+                    <p>In addition to this, different browsers provide different methods to block and delete cookies used by websites. You can change the settings of your browser to block/delete the cookies. To find out more about how to manage and delete cookies, visit <a href="https://www.wikipedia.org" target="_blank" rel="noopener noreferrer">wikipedia.org</a> or <a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer">www.allaboutcookies.org</a>.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8 text-white">
+                <div class="lg:col-span-2">
+                    <p class="text-text-light/80 max-w-md mb-6">Your trusted partner for specialized work in renewable energy projects.</p>
+                     <a href="contact.html" class="inline-flex items-center text-white hover:text-light-green transition-colors duration-300 group">
+                        <span class="text-lg font-medium mr-2">Get in touch</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">About</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="index.html" class="hover:text-success transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-success transition-colors">Why Sukar Energy</a></li>
+                        <li><a href="contact.html" class="hover:text-success transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">What We Do</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="services.html" class="hover:text-success transition-colors">Services</a></li>
+                        <li><a href="projects.html" class="hover:text-success transition-colors">Projects</a></li>
+                         <li><a href="about.html" class="hover:text-success transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">Contact Details</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="mailto:info@sukarenergy.com" class="hover:text-success transition-colors">contact@sukargreenenergy.com</a></li>
+                        <li><a href="tel:+911234567890" class="hover:text-success transition-colors">+91 9535325933</a></li>
+                        <li>#541, Ward 6, Siruguppa, <br>Bellary, KA, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 mt-6 flex flex-col md:flex-row justify-between items-center text-sm text-text-light/80">
+                <div class="flex flex-wrap justify-center items-center text-center gap-x-4 gap-y-2 order-1 md:order-2 mb-6 md:mb-0">
+                    <a href="cookie-policy.html" class="hover:text-success transition-colors">Cookie Policy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-success transition-colors">Terms and Conditions</a>
+                    <a href="privacy-policy.html" class="hover:text-success transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-success transition-colors">Sitemap</a>
+                </div>
+                <div class="hidden md:flex items-center order-1">
+                    <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-8 mr-4" onerror="this.onerror=null; this.src='https://placehold.co/100x32/0A1931/FFFFFF?text=SUKAR';">
+                    <span>&copy; <span class="current-year"></span> SUKAR GREEN ENERGY. All Rights Reserved.</span>
+                </div>
+                <div class="md:hidden order-2 mb-4">
+                     <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-8 mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/100x32/0A1931/FFFFFF?text=SUKAR';">
+                </div>
+                <div class="md:hidden order-3 text-center mb-4">
+                    <span>&copy; <span class="current-year"></span> SUKAR GREEN ENERGY. All Rights Reserved.</span>
+                </div>
+                <div class="order-4 md:order-3 text-center">
+                     <p class="designer-credit">
+                        Designed by <a href="https://nehkarsolutions.com" target="_blank" rel="noopener noreferrer" class="text-white font-semibold hover:text-light-green transition-colors">Nehkar Solutions</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const mainHeaderLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
+
+        const setActiveLink = (links) => {
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        setActiveLink(mainHeaderLinks);
+        setActiveLink(mobileNavLinks);
+
+        document.querySelectorAll('.current-year').forEach(span => {
+            span.textContent = new Date().getFullYear();
+        });
+        
+        // --- Dynamic Header on Scroll ---
+        const header = document.getElementById('main-header');
+        const heroSection = document.getElementById('hero-section');
+        const scrollThreshold = 50; 
+
+        function handleScroll() {
+            if (window.scrollY >= scrollThreshold) {
+                header.classList.remove('absolute', 'top-5');
+                header.classList.add('fixed', 'top-0', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
+                if (heroSection) {
+                    heroSection.classList.add('scrolled');
+                }
+            } else {
+                header.classList.remove('fixed', 'top-0', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
+                header.classList.add('absolute', 'top-5');
+                if (heroSection) {
+                    heroSection.classList.remove('scrolled');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    });
+    </script>
+</body>
+</html>

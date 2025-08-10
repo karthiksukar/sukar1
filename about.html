@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SUKAR GREEN ENERGY</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A1931', // Deep Navy
+                        'secondary': '#F8F8F8', // Off-White
+                        'accent': '#D4AF37', // Rich Gold
+                        'text-dark': '#333333', // Dark Gray
+                        'text-light': '#F8F8F8',
+                        'success': '#2E7D32', // Muted Green
+                        'light-green': '#84CC16', // Vibrant, light green
+                    },
+                    fontFamily: {
+                        'heading': ['Lora', 'Georgia', 'serif'],
+                        'body': ['Lora', 'Georgia', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8F8F8;
+            color: #333333;
+            font-family: 'Lora', 'Georgia', 'serif';
+            font-weight: 400;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', 'Georgia', 'serif';
+            font-weight: 700;
+            color: #0A1931;
+        }
+        .nav-link.active {
+            color: #2E7D32;
+            position: relative;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #2E7D32;
+        }
+        
+        .nav-link-mobile.active {
+            color: #84CC16 !important;
+        }
+        .prose h1.page-title {
+             color: #FFFFFF;
+             text-align: center;
+             margin-bottom: 0;
+        }
+        
+        /* Custom style for the image container to handle overlay transition */
+        .image-overlay-container {
+            position: relative;
+            overflow: hidden; /* Ensures the image and overlay stay within bounds */
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: #0A1931; /* primary color */
+            opacity: 0.6; /* initial darkness - decreased from 0.75 */
+            transition: opacity 0.3s ease-in-out; /* smooth transition */
+        }
+
+        .image-overlay-container:hover .image-overlay {
+            opacity: 0; /* fully transparent on hover */
+        }
+
+        /* --- Flip Card Styles --- */
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 360px; /* Adjusted height for content */
+            perspective: 1000px; /* 3D effect */
+            font-family: 'Lora', 'Georgia', 'serif';
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        /* Flip on hover */
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Front and back card styling */
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem; /* p-6 */
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .flip-card-back h3 {
+            font-weight: bold;
+            background: linear-gradient(90deg, #2E7D32, #84CC16);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .flip-card-back a {
+            color: #F8F8F8;
+            transition: color 0.3s;
+        }
+
+        .flip-card-back a:hover {
+            color: #84CC16;
+        }
+    </style>
+</head>
+<body class="bg-secondary font-body">
+
+    <!-- Header -->
+    <header id="main-header" class="text-white absolute top-5 left-0 right-0 z-40 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="flex items-center z-50">
+                <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-10" style="height: 40px;" onerror="this.onerror=null; this.src='https://placehold.co/200x40/0A1931/FFFFFF?text=SUKAR+GREEN+ENERGY'">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Home</a>
+                <a href="about.html" class="nav-link text-lg hover:text-success transition-colors duration-300">About Us</a>
+                <a href="services.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Services</a>
+                <a href="projects.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Projects</a>
+                <a href="contact.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="p-2 z-50 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-primary z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col">
+        <div class="flex justify-between items-center p-4 border-b border-gray-700 flex-shrink-0">
+             <a href="index.html" class="flex items-center">
+                <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/200x40/0A1931/FFFFFF?text=SUKAR'">
+            </a>
+            <button id="close-menu-button" class="p-2 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <nav class="flex flex-col items-start w-full pt-8">
+            <a href="index.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Home</a>
+            <a href="about.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">About Us</a>
+            <a href="services.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Services</a>
+            <a href="projects.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Projects</a>
+            <a href="contact.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left border-b-0">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Page Title Banner -->
+        <div id="hero-section" class="relative bg-primary flex items-end justify-center min-h-[200px] md:min-h-[250px] pb-6 md:pb-10">
+            <div class="container mx-auto px-4">
+                <div class="text-center">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+                        About SUKAR GREEN ENERGY
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 py-12">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Image with Overlay Transition -->
+                    <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container">
+                        <img src="aboutus.png" alt="Engineers planning on a construction site" class="w-full h-full object-cover rounded-lg">
+                        <div class="image-overlay rounded-lg"></div>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Our Story</h2>
+                        <p class="text-text-dark mb-6 text-lg leading-relaxed">Sukar Constructions was founded with a clear goal: to become the most reliable and sought-after contractor in the solar and building construction sectors. As a new company, we bring energy, focus, and a modern approach to every project we undertake. Our early success is a testament to our skilled team and our commitment to excellence from day one.</p>
+                        <h2 class="text-3xl font-bold mb-4">Our Commitment to Quality & Safety</h2>
+                        <p class="text-text-dark text-lg leading-relaxed">At Sukar Constructions, good quality and safety are the twin pillars of our operations. We believe that a successful project is not just one that is completed on time, but one that is built to last and ensures the well-being of everyone involved. We adhere to the strictest safety protocols and implement rigorous quality checks at every stage of our work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Team -->
+        <div class="bg-secondary py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-12">Meet Our Leadership</h2>
+                        <div class="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                            <!-- Team Member 1: Karthik B -->
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="karthik.png" alt="Karthik B" class="w-32 h-32 rounded-lg mx-auto mb-4 object-cover border-4 border-success">
+                                        <h3 class="text-2xl font-bold">Karthik B</h3>
+                                        <p class="text-success font-semibold mb-2">Co-founder & Execution and Quality</p>
+                                        <p class="text-text-dark text-sm px-4">Karthik ensures the highest standards of quality and efficiency in all civil engineering aspects of our projects.</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h3 class="text-2xl font-bold mb-4">Contact Info</h3>
+                                        <a href="mailto:karthik.b@sukargreenenergy.com" class="text-sm sm:text-base">karthik.b@sukargreenenergy.com</a>
+                                        <a href="tel:+919535325933" class="mt-2">+91 95353 25933</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Team Member 2: Sudhakar Chavan -->
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="https://placehold.co/200x200/0A1931/F8F8F8?text=Sudhakar+C" alt="Sudhakar Chavan" class="w-32 h-32 rounded-lg mx-auto mb-4 object-cover border-4 border-success">
+                                        <h3 class="text-2xl font-bold">Sudhakar Chavan</h3>
+                                        <p class="text-success font-semibold mb-2">Co-founder, Finance & HSE</p>
+                                        <p class="text-text-dark text-sm px-4">Sudhakar oversees our financial health and ensures a safe and compliant working environment.</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h3 class="text-2xl font-bold mb-4">Contact Info</h3>
+                                        <a href="mailto:sudhakar.chavan@sukargreenenergy.com" class="text-sm sm:text-base">sudhakar.chavan@sukargreenenergy.com</a>
+                                        <a href="tel:+916366092083" class="mt-2">+91 63660 92083</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <!-- Top Section with Links -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8 text-white">
+                <!-- Column 1: Get in Touch -->
+                <div class="lg:col-span-2">
+                    <p class="text-text-light/80 max-w-md mb-6">Your trusted partner for specialized work in renewable energy projects.</p>
+                     <a href="contact.html" class="inline-flex items-center text-white hover:text-light-green transition-colors duration-300 group">
+                        <span class="text-lg font-medium mr-2">Get in touch</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+                <!-- Column 2: About -->
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">About</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="index.html" class="hover:text-success transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-success transition-colors">Why Sukar Energy</a></li>
+                        <li><a href="contact.html" class="hover:text-success transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: What We Do -->
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">What We Do</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="services.html" class="hover:text-success transition-colors">Services</a></li>
+                        <li><a href="projects.html" class="hover:text-success transition-colors">Projects</a></li>
+                         <li><a href="about.html" class="hover:text-success transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4: Contact Details -->
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">Contact Details</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="mailto:contact@sukargreenenergy.com" class="hover:text-success transition-colors">contact@sukargreenenergy.com</a></li>
+                        <li><a href="tel:+919535325933" class="hover:text-success transition-colors">+91 9535325933</a></li>
+                        <li>#541, Ward 6, Siruguppa, <br>Bellary, KA, India</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Border -->
+            <div class="border-t border-gray-700 mt-8"></div>
+
+            <!-- DESKTOP FOOTER -->
+            <div class="hidden md:flex pt-6 justify-between items-center text-sm text-text-light/80">
+                <!-- Desktop: Logo & Copyright -->
+                <div class="flex items-center">
+                    <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-8 mr-4" onerror="this.onerror=null; this.src='https://placehold.co/100x32/0A1931/FFFFFF?text=SUKAR';">
+                    <span>&copy; <span class="current-year"></span> SUKAR GREEN ENERGY. All Rights Reserved.</span>
+                </div>
+                <!-- Legal Links -->
+                <div class="flex flex-wrap justify-center items-center text-center gap-x-4 gap-y-2">
+                    <a href="#" class="hover:text-success transition-colors">Cookie Policy</a>
+                    <a href="#" class="hover:text-success transition-colors">Terms and Conditions</a>
+                    <a href="#" class="hover:text-success transition-colors">Privacy Policy</a>
+                    <a href="contact.html" class="hover:text-success transition-colors">Sitemap</a>
+                </div>
+                <!-- Designer Credit -->
+                <div>
+                     <p class="designer-credit">
+                        Designed by <a href="https://nehkarsolutions.com" target="_blank" rel="noopener noreferrer" class="text-white font-semibold hover:text-light-green transition-colors">Nehkar Solutions</a>
+                    </p>
+                </div>
+            </div>
+    
+            <!-- MOBILE FOOTER -->
+            <div class="block md:hidden pt-8 text-sm text-text-light/80">
+                <div class="flex flex-col gap-y-6">
+                    <!-- Top Row: Legal Links -->
+                    <div class="flex flex-nowrap justify-start gap-x-4 text-left text-xs">
+                        <a href="#" class="hover:text-success transition-colors whitespace-nowrap">Cookie Policy</a>
+                        <a href="#" class="hover:text-success transition-colors whitespace-nowrap">Terms & Conditions</a>
+                        <a href="#" class="hover:text-success transition-colors whitespace-nowrap">Privacy Policy</a>
+                    </div>
+    
+                    <!-- Middle Row: Sitemap & Copyright -->
+                    <div class="flex flex-nowrap justify-start items-center gap-x-3 text-left text-xs">
+                        <a href="contact.html" class="hover:text-success transition-colors">Sitemap</a>
+                        <span>&copy; <span class="current-year"></span> SUKAR GREEN ENERGY. All Rights Reserved.</span>
+                    </div>
+    
+                    <!-- Bottom Row: Logo & Designer -->
+                    <div class="flex justify-between items-center w-full pt-4">
+                        <!-- Logo -->
+                        <a href="index.html">
+                             <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-8" onerror="this.onerror=null; this.src='https://placehold.co/100x32/0A1931/FFFFFF?text=SUKAR';">
+                        </a>
+                        <!-- Designer Credit -->
+                        <p class="text-right">
+                            Designed by <a href="https://nehkarsolutions.com" target="_blank" rel="noopener noreferrer" class="text-white font-semibold hover:text-light-green transition-colors">Nehkar Solutions</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // --- Active Nav Link ---
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html'; // Dynamic current page detection
+        const mainHeaderLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
+
+        const setActiveLink = (links) => {
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        setActiveLink(mainHeaderLinks);
+        setActiveLink(mobileNavLinks);
+
+        // --- Footer Current Year ---
+        document.querySelectorAll('.current-year').forEach(span => {
+            span.textContent = new Date().getFullYear();
+        });
+        
+        // --- Dynamic Header on Scroll ---
+        const header = document.getElementById('main-header');
+        const heroSection = document.getElementById('hero-section');
+        const scrollThreshold = 50; 
+
+        function handleScroll() {
+            if (window.scrollY >= scrollThreshold) {
+                header.classList.remove('absolute', 'top-5');
+                header.classList.add('fixed', 'top-0', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
+                if (heroSection) {
+                    heroSection.classList.add('scrolled');
+                }
+            } else {
+                header.classList.remove('fixed', 'top-0', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
+                header.classList.add('absolute', 'top-5');
+                if (heroSection) {
+                    heroSection.classList.remove('scrolled');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    });
+    </script>
+</body>
+</html>

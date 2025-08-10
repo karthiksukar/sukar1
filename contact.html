@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SUKAR GREEN ENERGY</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A1931',
+                        'secondary': '#F8F8F8',
+                        'accent': '#D4AF37',
+                        'text-dark': '#333333',
+                        'text-light': '#F8F8F8',
+                        'success': '#2E7D32',
+                        'light-green': '#84CC16',
+                    },
+                    fontFamily: {
+                        'heading': ['Lora', 'Georgia', 'serif'],
+                        'body': ['Lora', 'Georgia', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8F8F8;
+            color: #333333;
+            font-family: 'Lora', 'Georgia', 'serif';
+            font-weight: 400;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', 'Georgia', 'serif';
+            font-weight: 700;
+            color: #0A1931;
+        }
+        .nav-link.active {
+            color: #2E7D32;
+            position: relative;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #2E7D32;
+        }
+        .nav-link-mobile.active {
+            color: #84CC16 !important;
+        }
+        .prose h1.page-title {
+             color: #FFFFFF;
+             text-align: center;
+             margin-bottom: 0;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: translateY(-50px);
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+        .modal.show .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-secondary font-body">
+
+    <!-- Header -->
+    <header id="main-header" class="text-white absolute top-5 left-0 right-0 z-40 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="flex items-center z-50">
+                <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-10" style="height: 40px;" onerror="this.onerror=null; this.src='https://placehold.co/200x40/0A1931/FFFFFF?text=SUKAR+GREEN+ENERGY';">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Home</a>
+                <a href="about.html" class="nav-link text-lg hover:text-success transition-colors duration-300">About Us</a>
+                <a href="services.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Services</a>
+                <a href="projects.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Projects</a>
+                <a href="contact.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="p-2 z-50 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-primary z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col">
+        <div class="flex justify-between items-center p-4 border-b border-gray-700 flex-shrink-0">
+             <a href="index.html" class="flex items-center">
+                <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/200x40/0A1931/FFFFFF?text=SUKAR';">
+            </a>
+            <button id="close-menu-button" class="p-2 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <nav class="flex flex-col items-start w-full pt-8">
+            <a href="index.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Home</a>
+            <a href="about.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">About Us</a>
+            <a href="services.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Services</a>
+            <a href="projects.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Projects</a>
+            <a href="contact.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left border-b-0">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Page Title Banner -->
+        <div id="hero-section" class="relative bg-primary h-64 flex items-center justify-center">
+             <div class="prose">
+                <h1 class="text-4xl md:text-5xl font-bold page-title">Contact Us</h1>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto -mt-40 relative z-10">
+                    <div class="grid lg:grid-cols-2 gap-12">
+                        <!-- Contact Form -->
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <h2 class="text-3xl font-bold mb-6 font-heading">Send Us a Message</h2>
+                            <form action="https://formspree.io/f/mldlaeak" method="POST" id="contact-form">
+                                <div class="grid sm:grid-cols-2 gap-6 mb-6">
+                                    <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-lg border border-gray-300 focus:border-success focus:ring-success" required>
+                                    <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded-lg border border-gray-300 focus:border-success focus:ring-success" required>
+                                </div>
+                                <input type="text" name="subject" placeholder="Subject" class="w-full p-3 rounded-lg border border-gray-300 mb-6 focus:border-success focus:ring-success" required>
+                                <textarea name="message" placeholder="Your Message" rows="6" class="w-full p-3 rounded-lg border border-gray-300 mb-6 focus:border-success focus:ring-success" required></textarea>
+                                <button type="submit" class="inline-block bg-success text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-white hover:text-success border-2 border-transparent hover:border-success text-lg w-full">Submit Inquiry</button>
+                            </form>
+                        </div>
+                        <!-- Contact Info & Map -->
+                        <div>
+                            <div class="bg-white text-primary p-8 rounded-lg shadow-lg mb-8">
+                                <h3 class="text-2xl font-bold font-heading mb-4 text-success">Contact Information</h3>
+                                <p class="mb-2">#541, Ward 6, Siruguppa, Bellary, KA, India</p>
+                                <p class="mb-2"><strong>Phone:</strong> <a href="tel:+919535325933" class="hover:text-success transition-colors">+91 9535325933</a></p>
+                                <p><strong>Email:</strong> <a href="mailto:contact@sukargreenenergy.com" class="hover:text-success transition-colors">contact@sukargreenenergy.com</a></p>
+                            </div>
+                            <div class="rounded-lg overflow-hidden shadow-lg">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239965.3168057207!2d73.73343907055665!3d19.997453400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddd290b09914b3%3A0xcb07816d38e8c679!2sNashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1692881518555!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <!-- Top Section with Links -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8 text-white">
+                <!-- Column 1: Get in Touch -->
+                <div class="lg:col-span-2">
+                    <p class="text-text-light/80 max-w-md mb-6">Your trusted partner for specialized work in renewable energy projects.</p>
+                     <a href="contact.html" class="inline-flex items-center text-white hover:text-light-green transition-colors duration-300 group">
+                        <span class="text-lg font-medium mr-2">Get in touch</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+                <!-- Column 2: About -->
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">About</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="index.html" class="hover:text-success transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-success transition-colors">Why Sukar Energy</a></li>
+                        <li><a href="contact.html" class="hover:text-success transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: What We Do -->
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">What We Do</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="services.html" class="hover:text-success transition-colors">Services</a></li>
+                        <li><a href="projects.html" class="hover:text-success transition-colors">Projects</a></li>
+                         <li><a href="about.html" class="hover:text-success transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4: Contact Details -->
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">Contact Details</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="mailto:contact@sukargreenenergy.com" class="hover:text-success transition-colors">contact@sukargreenenergy.com</a></li>
+                        <li><a href="tel:+919535325933" class="hover:text-success transition-colors">+91 9535325933</a></li>
+                        <li>#541, Ward 6, Siruguppa,<br>Bellary, KA, India</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Border -->
+            <div class="border-t border-gray-700 mt-8"></div>
+
+            <!-- DESKTOP FOOTER -->
+            <div class="hidden md:flex pt-6 justify-between items-center text-sm text-text-light/80">
+                <!-- Desktop: Logo & Copyright -->
+                <div class="flex items-center">
+                    <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-8 mr-4" onerror="this.onerror=null; this.src='https://placehold.co/100x32/0A1931/FFFFFF?text=SUKAR';">
+                    <span>&copy; <span class="current-year"></span> SUKAR GREEN ENERGY. All Rights Reserved.</span>
+                </div>
+                <!-- Legal Links -->
+                <div class="flex flex-wrap justify-center items-center text-center gap-x-4 gap-y-2">
+                    <a href="#" class="hover:text-success transition-colors">Cookie Policy</a>
+                    <a href="#" class="hover:text-success transition-colors">Terms and Conditions</a>
+                    <a href="#" class="hover:text-success transition-colors">Privacy Policy</a>
+                    <a href="contact.html" class="hover:text-success transition-colors">Sitemap</a>
+                </div>
+                <!-- Designer Credit -->
+                <div>
+                     <p class="designer-credit">
+                        Designed by <a href="https://nehkarsolutions.com" target="_blank" rel="noopener noreferrer" class="text-white font-semibold hover:text-light-green transition-colors">Nehkar Solutions</a>
+                    </p>
+                </div>
+            </div>
+    
+            <!-- MOBILE FOOTER -->
+            <div class="block md:hidden pt-8 text-sm text-text-light/80">
+                <div class="flex flex-col gap-y-6">
+                    <!-- Top Row: Legal Links -->
+                    <div class="flex flex-nowrap justify-start gap-x-4 text-left text-xs">
+                        <a href="#" class="hover:text-success transition-colors whitespace-nowrap">Cookie Policy</a>
+                        <a href="#" class="hover:text-success transition-colors whitespace-nowrap">Terms & Conditions</a>
+                        <a href="#" class="hover:text-success transition-colors whitespace-nowrap">Privacy Policy</a>
+                    </div>
+    
+                    <!-- Middle Row: Sitemap & Copyright -->
+                    <div class="flex flex-nowrap justify-start items-center gap-x-3 text-left text-xs">
+                        <a href="contact.html" class="hover:text-success transition-colors">Sitemap</a>
+                        <span>&copy; <span class="current-year"></span> SUKAR GREEN ENERGY. All Rights Reserved.</span>
+                    </div>
+    
+                    <!-- Bottom Row: Logo & Designer -->
+                    <div class="flex justify-between items-center w-full pt-4">
+                        <!-- Logo -->
+                        <a href="index.html">
+                             <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-8" onerror="this.onerror=null; this.src='https://placehold.co/100x32/0A1931/FFFFFF?text=SUKAR';">
+                        </a>
+                        <!-- Designer Credit -->
+                        <p class="text-right">
+                            Designed by <a href="https://nehkarsolutions.com" target="_blank" rel="noopener noreferrer" class="text-white font-semibold hover:text-light-green transition-colors">Nehkar Solutions</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <svg class="mx-auto mb-4 h-16 w-16 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <h3 class="text-2xl font-bold mb-4 text-primary">Inquiry Sent!</h3>
+            <p class="text-text-dark text-lg mb-6">Thank you for your inquiry! We will be in touch shortly.</p>
+            <button id="modal-close-button" class="inline-block bg-success text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 ease-in-out hover:bg-white hover:text-success border-2 border-transparent hover:border-success">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const mainHeaderLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
+
+        const setActiveLink = (links) => {
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        setActiveLink(mainHeaderLinks);
+        setActiveLink(mobileNavLinks);
+
+        document.querySelectorAll('.current-year').forEach(span => {
+            span.textContent = new Date().getFullYear();
+        });
+        
+        const contactForm = document.getElementById('contact-form');
+        const successModal = document.getElementById('success-modal');
+        const modalCloseButton = document.getElementById('modal-close-button');
+        const closeButtonIcon = successModal.querySelector('.close-button');
+
+        function showModal() {
+            successModal.classList.add('show');
+            setTimeout(() => {
+                successModal.querySelector('.modal-content').classList.add('show');
+            }, 10);
+        }
+
+        function hideModal() {
+            successModal.querySelector('.modal-content').classList.remove('show');
+            setTimeout(() => {
+                successModal.classList.remove('show');
+            }, 300);
+        }
+
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                showModal();
+                contactForm.reset();
+            } else {
+                console.error('Form submission failed.');
+                alert('Form submission failed. Please try again.');
+            }
+        });
+
+        modalCloseButton.addEventListener('click', hideModal);
+        closeButtonIcon.addEventListener('click', hideModal);
+
+        window.addEventListener('click', function(event) {
+            if (event.target == successModal) {
+                hideModal();
+            }
+        });
+
+        // --- Dynamic Header on Scroll ---
+        const header = document.getElementById('main-header');
+        const heroSection = document.getElementById('hero-section');
+        const scrollThreshold = 50; 
+
+        function handleScroll() {
+            if (window.scrollY >= scrollThreshold) {
+                header.classList.remove('absolute', 'top-5');
+                header.classList.add('fixed', 'top-0', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
+                if (heroSection) {
+                    heroSection.classList.add('scrolled');
+                }
+            } else {
+                header.classList.remove('fixed', 'top-0', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
+                header.classList.add('absolute', 'top-5');
+                if (heroSection) {
+                    heroSection.classList.remove('scrolled');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    });
+    </script>
+</body>
+</html>

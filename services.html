@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | SUKAR GREEN ENERGY</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0A1931', // Deep Navy
+                        'secondary': '#F8F8F8', // Off-White
+                        'accent': '#D4AF37', // Rich Gold
+                        'text-dark': '#333333', // Dark Gray
+                        'text-light': '#F8F8F8',
+                        'success': '#2E7D32', // Muted Green
+                        'light-green': '#84CC16', // Vibrant, light green
+                    },
+                    fontFamily: {
+                        'heading': ['Lora', 'Georgia', 'serif'],
+                        'body': ['Lora', 'Georgia', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body{background-color:#F8F8F8;color:#333333;font-family:'Lora','Georgia',serif; font-weight: 400;}
+        h1,h2,h3,h4,h5,h6{font-family:'Lora','Georgia',serif;font-weight:700;color:#0A1931}
+        .nav-link.active{color:#2E7D32;position:relative}
+        .nav-link.active::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:2px;background-color:#2E7D32}
+        .nav-link-mobile.active { color: #84CC16 !important; }
+        
+        .hero-title {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Custom style for the image container to handle overlay transition */
+        .image-overlay-container {
+            position: relative;
+            overflow: hidden; /* Ensures the image and overlay stay within bounds */
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: #0A1931; /* primary color */
+            opacity: 0.6; /* initial darkness */
+            transition: opacity 0.3s ease-in-out; /* smooth transition */
+        }
+
+        .image-overlay-container:hover .image-overlay {
+            opacity: 0; /* fully transparent on hover */
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0A1931;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #2E7D32;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-secondary font-body">
+
+    <!-- Updated Header with absolute positioning -->
+    <header id="main-header" class="text-white absolute top-5 left-0 right-0 z-40 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="flex items-center z-50">
+                <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-10" style="height: 40px;" onerror="this.onerror=null; this.src='https://placehold.co/200x40/0A1931/FFFFFF?text=SUKAR+GREEN+ENERGY'">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Home</a>
+                <a href="about.html" class="nav-link text-lg hover:text-success transition-colors duration-300">About Us</a>
+                <a href="services.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Services</a>
+                <a href="projects.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Projects</a>
+                <a href="contact.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="p-2 z-50 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu (Full Screen Overlay) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-primary z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col">
+        <div class="flex justify-between items-center p-4 border-b border-gray-700 flex-shrink-0">
+             <a href="index.html" class="flex items-center">
+                <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/200x40/0A1931/FFFFFF?text=SUKAR'">
+            </a>
+            <button id="close-menu-button" class="p-2 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col items-start w-full pt-8">
+            <a href="index.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Home</a>
+            <a href="about.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">About Us</a>
+            <a href="services.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Services</a>
+            <a href="projects.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-b border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left">Projects</a>
+            <a href="contact.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left border-b-0">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section - Matching About Page -->
+    <div id="hero-section" class="relative bg-primary flex items-end justify-center min-h-[200px] md:min-h-[250px] pb-6 md:pb-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+                    Our Specialized Services
+                </h1>
+                
+            </div>
+        </div>
+    </div>
+
+    <main class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Stats Section -->
+            
+            
+            
+            <!-- Service 1: Solar -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16 service-card bg-white rounded-xl p-6">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Contracting for Solar Projects</h2>
+                    <p class="text-text-dark mb-4 text-lg leading-relaxed">We partner with EPC companies and project developers to provide specialized labor and management for ground-mounted solar farms. We excel in executing specific work packages with a focus on quality and safety.</p>
+                    <ul class="list-disc list-inside text-text-dark space-y-2 text-lg">
+                        <li>Civil and Foundation Works</li>
+                        <li>Mounting Structure Assembly and Installation</li>
+                        <li>Solar Panel Installation and Cabling</li>
+                        <li>General Site Management and Skilled Labor</li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="contact.html" class="inline-flex items-center text-primary hover:text-success font-medium transition-colors duration-300 group">
+                            <span class="text-lg mr-2">Get a quote for your solar project</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image with Overlay Transition -->
+                <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container">
+                    <img src="solarservices.png" alt="Solar panel farm" class="w-full h-full object-cover rounded-lg">
+                    <div class="image-overlay rounded-lg"></div>
+                </div>
+            </div>
+
+            <!-- Service 2: Building Construction -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16 service-card bg-white rounded-xl p-6">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Contracting for Building Projects</h2>
+                    <p class="text-text-dark mb-4 text-lg leading-relaxed">Our team provides reliable contracting services for large-scale building construction. We work under the main client or EPC to deliver high-quality work on specific elements of the project, ensuring our contribution meets the highest standards.</p>
+                    <ul class="list-disc list-inside text-text-dark space-y-2 text-lg">
+                        <li>Structural and Civil Works Packages</li>
+                        <li>Reinforced Concrete and Formwork</li>
+                        <li>Masonry and Finishing Works</li>
+                        <li>Project-Specific Skilled Labor Provision</li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="contact.html" class="inline-flex items-center text-primary hover:text-success font-medium transition-colors duration-300 group">
+                            <span class="text-lg mr-2">Discuss your construction needs</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image with Overlay Transition -->
+                <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container">
+                    <img src="buildingservices.png" alt="Large building under construction" class="w-full h-full object-cover rounded-lg">
+                    <div class="image-overlay rounded-lg"></div>
+                </div>
+            </div>
+            
+            <!-- Additional Services -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-12">Additional Capabilities</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-secondary rounded-lg p-6 service-card">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Project Management</h3>
+                        <p class="text-text-dark">Expert coordination and oversight to ensure your project stays on schedule and within budget.</p>
+                    </div>
+                    
+                    <div class="bg-secondary rounded-lg p-6 service-card">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Quality Assurance</h3>
+                        <p class="text-text-dark">Rigorous quality control processes to deliver work that exceeds industry standards.</p>
+                    </div>
+                    
+                    <div class="bg-secondary rounded-lg p-6 service-card">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Safety Compliance</h3>
+                        <p class="text-text-dark">Comprehensive safety protocols to protect workers and ensure regulatory compliance.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="bg-primary rounded-xl p-8 md:p-12 text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Ready to Start Your Project?</h2>
+                <p class="text-text-light/80 max-w-2xl mx-auto mb-8 text-lg">
+                    Contact us today to discuss your solar or construction contracting needs. Our team is ready to deliver exceptional results.
+                </p>
+                <a href="contact.html" class="inline-block bg-success hover:bg-light-green text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <!-- Top Section with Links -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8 text-white">
+                <!-- Column 1: Get in Touch -->
+                <div class="lg:col-span-2">
+                    <p class="text-text-light/80 max-w-md mb-6">Your trusted partner for specialized work in renewable energy projects.</p>
+                     <a href="contact.html" class="inline-flex items-center text-white hover:text-light-green transition-colors duration-300 group">
+                        <span class="text-lg font-medium mr-2">Get in touch</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+                <!-- Column 2: About -->
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">About</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="index.html" class="hover:text-success transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-success transition-colors">Why Sukar Energy</a></li>
+                        <li><a href="contact.html" class="hover:text-success transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: What We Do -->
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">What We Do</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="services.html" class="hover:text-success transition-colors">Services</a></li>
+                        <li><a href="projects.html" class="hover:text-success transition-colors">Projects</a></li>
+                         <li><a href="about.html" class="hover:text-success transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4: Contact Details -->
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-4 uppercase text-success">Contact Details</h4>
+                    <ul class="space-y-2 text-text-light/80">
+                        <li><a href="mailto:contact@sukargreenenergy.com" class="hover:text-success transition-colors">contact@sukargreenenergy.com</a></li>
+                        <li><a href="tel:+919535325933" class="hover:text-success transition-colors">+91 9535325933</a></li>
+                        <li>#541, Ward 6, Siruguppa,<br>Bellary, KA, India</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Border -->
+            <div class="border-t border-gray-700 mt-8"></div>
+
+            <!-- DESKTOP FOOTER -->
+            <div class="hidden md:flex pt-6 justify-between items-center text-sm text-text-light/80">
+                <!-- Desktop: Logo & Copyright -->
+                <div class="flex items-center">
+                    <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-8 mr-4" onerror="this.onerror=null; this.src='https://placehold.co/100x32/0A1931/FFFFFF?text=SUKAR';">
+                    <span>&copy; <span class="current-year"></span> SUKAR GREEN ENERGY. All Rights Reserved.</span>
+                </div>
+                <!-- Legal Links -->
+                <div class="flex flex-wrap justify-center items-center text-center gap-x-4 gap-y-2">
+                    <a href="#" class="hover:text-success transition-colors">Cookie Policy</a>
+                    <a href="#" class="hover:text-success transition-colors">Terms and Conditions</a>
+                    <a href="#" class="hover:text-success transition-colors">Privacy Policy</a>
+                    <a href="contact.html" class="hover:text-success transition-colors">Sitemap</a>
+                </div>
+                <!-- Designer Credit -->
+                <div>
+                     <p class="designer-credit">
+                        Designed by <a href="https://nehkarsolutions.com" target="_blank" rel="noopener noreferrer" class="text-white font-semibold hover:text-light-green transition-colors">Nehkar Solutions</a>
+                    </p>
+                </div>
+            </div>
+    
+            <!-- MOBILE FOOTER -->
+            <div class="block md:hidden pt-8 text-sm text-text-light/80">
+                <div class="flex flex-col gap-y-6">
+                    <!-- Top Row: Legal Links -->
+                    <div class="flex flex-nowrap justify-start gap-x-4 text-left text-xs">
+                        <a href="#" class="hover:text-success transition-colors whitespace-nowrap">Cookie Policy</a>
+                        <a href="#" class="hover:text-success transition-colors whitespace-nowrap">Terms & Conditions</a>
+                        <a href="#" class="hover:text-success transition-colors whitespace-nowrap">Privacy Policy</a>
+                    </div>
+    
+                    <!-- Middle Row: Sitemap & Copyright -->
+                    <div class="flex flex-nowrap justify-start items-center gap-x-3 text-left text-xs">
+                        <a href="contact.html" class="hover:text-success transition-colors">Sitemap</a>
+                        <span>&copy; <span class="current-year"></span> SUKAR GREEN ENERGY. All Rights Reserved.</span>
+                    </div>
+    
+                    <!-- Bottom Row: Logo & Designer -->
+                    <div class="flex justify-between items-center w-full pt-4">
+                        <!-- Logo -->
+                        <a href="index.html">
+                             <img src="sukarbackgroundremoved.png" alt="SUKAR GREEN ENERGY Logo" class="h-8" onerror="this.onerror=null; this.src='https://placehold.co/100x32/0A1931/FFFFFF?text=SUKAR';">
+                        </a>
+                        <!-- Designer Credit -->
+                        <p class="text-right">
+                            Designed by <a href="https://nehkarsolutions.com" target="_blank" rel="noopener noreferrer" class="text-white font-semibold hover:text-light-green transition-colors">Nehkar Solutions</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // --- Active Nav Link ---
+        const currentPage = 'services.html'; // Set current page here
+        const mainHeaderLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
+
+        const setActiveLink = (links) => {
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        setActiveLink(mainHeaderLinks);
+        setActiveLink(mobileNavLinks);
+
+        // --- Footer Current Year ---
+        document.querySelectorAll('.current-year').forEach(span => {
+            span.textContent = new Date().getFullYear();
+        });
+        
+        // --- Dynamic Header on Scroll ---
+        const header = document.getElementById('main-header');
+        const heroSection = document.getElementById('hero-section');
+        const scrollThreshold = 50; 
+
+        function handleScroll() {
+            if (window.scrollY >= scrollThreshold) {
+                header.classList.remove('absolute', 'top-5');
+                header.classList.add('fixed', 'top-0', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
+                if (heroSection) {
+                    heroSection.classList.add('scrolled');
+                }
+            } else {
+                header.classList.remove('fixed', 'top-0', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
+                header.classList.add('absolute', 'top-5');
+                if (heroSection) {
+                    heroSection.classList.remove('scrolled');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    });
+    </script>
+</body>
+</html>
