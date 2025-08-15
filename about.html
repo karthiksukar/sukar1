@@ -203,83 +203,92 @@
             <a href="contact.html" class="nav-link-mobile text-white text-2xl py-4 px-5 border-gray-700 transition-colors duration-300 hover:bg-white/5 w-full text-left border-b-0">Contact</a>
         </nav>
     </div>
+<main>
+    <!-- Page Title Banner -->
+    <div id="hero-section" class="relative bg-primary flex items-end justify-center min-h-[200px] md:min-h-[250px] pb-6 md:pb-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+                    About SUKAR GREEN ENERGY
+                </h1>
+            </div>
+        </div>
+    </div>
 
-    <main>
-        <!-- Page Title Banner -->
-        <div id="hero-section" class="relative bg-primary flex items-end justify-center min-h-[200px] md:min-h-[250px] pb-6 md:pb-10">
-            <div class="container mx-auto px-4">
-                <div class="text-center">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-                        About SUKAR GREEN ENERGY
-                    </h1>
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image with Overlay Transition -->
+                <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container">
+                    <img src="aboutus.png" alt="Engineers planning on a construction site" class="w-full h-full object-cover rounded-lg">
+                    <div class="image-overlay rounded-lg"></div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Our Story</h2>
+                    <p class="text-text-dark mb-6 text-lg leading-relaxed">Sukar Constructions was founded with a clear goal: to become the most reliable and sought-after contractor in the solar and building construction sectors. As a new company, we bring energy, focus, and a modern approach to every project we undertake. Our early success is a testament to our skilled team and our commitment to excellence from day one.</p>
+                    <h2 class="text-3xl font-bold mb-4">Our Commitment to Quality & Safety</h2>
+                    <p class="text-text-dark text-lg leading-relaxed">At Sukar Constructions, good quality and safety are the twin pillars of our operations. We believe that a successful project is not just one that is completed on time, but one that is built to last and ensures the well-being of everyone involved. We adhere to the strictest safety protocols and implement rigorous quality checks at every stage of our work.</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Main Content -->
-        <div class="container mx-auto px-4 py-12">
+    <!-- Our Team -->
+    <div class="bg-secondary py-16">
+        <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <!-- Image with Overlay Transition -->
-                    <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container">
-                        <img src="aboutus.png" alt="Engineers planning on a construction site" class="w-full h-full object-cover rounded-lg">
-                        <div class="image-overlay rounded-lg"></div>
-                    </div>
-                    <div>
-                        <h2 class="text-3xl font-bold mb-4">Our Story</h2>
-                        <p class="text-text-dark mb-6 text-lg leading-relaxed">Sukar Constructions was founded with a clear goal: to become the most reliable and sought-after contractor in the solar and building construction sectors. As a new company, we bring energy, focus, and a modern approach to every project we undertake. Our early success is a testament to our skilled team and our commitment to excellence from day one.</p>
-                        <h2 class="text-3xl font-bold mb-4">Our Commitment to Quality & Safety</h2>
-                        <p class="text-text-dark text-lg leading-relaxed">At Sukar Constructions, good quality and safety are the twin pillars of our operations. We believe that a successful project is not just one that is completed on time, but one that is built to last and ensures the well-being of everyone involved. We adhere to the strictest safety protocols and implement rigorous quality checks at every stage of our work.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Our Team -->
-        <div class="bg-secondary py-16">
-            <div class="container mx-auto px-4">
-                <div class="max-w-6xl mx-auto">
-                    <div class="text-center">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-12">Meet Our Leadership</h2>
-                        <div class="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                            <!-- Team Member 1: Karthik B -->
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <img src="karthik.png" alt="Karthik B" class="w-32 h-32 rounded-lg mx-auto mb-4 object-cover border-4 border-success">
-                                        <h3 class="text-2xl font-bold">Karthik B</h3>
-                                        <p class="text-success font-semibold mb-2">Co-founder & Head of Projects</p>
-                                        <p class="text-text-dark text-sm px-4">Karthik ensures the highest standards of quality and efficiency in all civil engineering aspects of our projects.</p>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h3 class="text-2xl font-bold mb-4">Contact Info</h3>
-                                        <a href="mailto:karthik.b@sukargreenenergy.com" class="text-sm sm:text-base">karthik.b@sukargreenenergy.com</a>
-                                        <a href="tel:+919535325933" class="mt-2">+91 95353 25933</a>
-                                    </div>
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-12">Meet Our Leadership</h2>
+                    <div class="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                        
+                        <!-- Team Member 1: Karthik B -->
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="karthik.png" 
+                                         srcset="karthik.png 1x, karthik@2x.png 2x"
+                                         alt="Karthik B" 
+                                         class="max-w-[128px] h-auto rounded-lg mx-auto mb-4 object-contain border-4 border-success">
+                                    <h3 class="text-2xl font-bold">Karthik B</h3>
+                                    <p class="text-success font-semibold mb-2">Co-founder & Head of Projects</p>
+                                    <p class="text-text-dark text-sm px-4">Karthik ensures the highest standards of quality and efficiency in all civil engineering aspects of our projects.</p>
                                 </div>
-                            </div>
-                            <!-- Team Member 2: Sudhakar Chavan -->
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <img src="sudhakar1.png" alt="Sudhakar Chavan" class="w-32 h-32 rounded-lg mx-auto mb-4 object-cover border-4 border-success">
-                                        <h3 class="text-2xl font-bold">Sudhakar Chavan</h3>
-                                        <p class="text-success font-semibold mb-2">Co-founder, Head of Finance & HSE</p>
-                                        <p class="text-text-dark text-sm px-4">Sudhakar oversees our financial health and ensures a safe and compliant working environment.</p>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h3 class="text-2xl font-bold mb-4">Contact Info</h3>
-                                        <a href="mailto:sudhakar.chavan@sukargreenenergy.com" class="text-sm sm:text-base">sudhakar.chavan@sukargreenenergy.com</a>
-                                        <a href="tel:+916366092083" class="mt-2">+91 63660 92083</a>
-                                    </div>
+                                <div class="flip-card-back">
+                                    <h3 class="text-2xl font-bold mb-4">Contact Info</h3>
+                                    <a href="mailto:karthik.b@sukargreenenergy.com" class="text-sm sm:text-base">karthik.b@sukargreenenergy.com</a>
+                                    <a href="tel:+919535325933" class="mt-2">+91 95353 25933</a>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Team Member 2: Sudhakar Chavan -->
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="sudhakar1.png" 
+                                         srcset="sudhakar1.png 1x, sudhakar1@2x.png 2x"
+                                         alt="Sudhakar Chavan" 
+                                         class="max-w-[128px] h-auto rounded-lg mx-auto mb-4 object-contain border-4 border-success">
+                                    <h3 class="text-2xl font-bold">Sudhakar Chavan</h3>
+                                    <p class="text-success font-semibold mb-2">Co-founder, Head of Finance & HSE</p>
+                                    <p class="text-text-dark text-sm px-4">Sudhakar oversees our financial health and ensures a safe and compliant working environment.</p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3 class="text-2xl font-bold mb-4">Contact Info</h3>
+                                    <a href="mailto:sudhakar.chavan@sukargreenenergy.com" class="text-sm sm:text-base">sudhakar.chavan@sukargreenenergy.com</a>
+                                    <a href="tel:+916366092083" class="mt-2">+91 63660 92083</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
+
 
     <!-- Footer -->
     <footer class="bg-primary text-white pt-16 pb-8">
