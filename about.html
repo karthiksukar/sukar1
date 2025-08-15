@@ -8,20 +8,6 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-     <script type="application/ld+json">
-        
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Sukar Green Energy",
-  "url": "https://sukargreenenergy.com",
-  "logo": "https://sukargreenenergy.com/favicon.png"
-}
-</script>
-    <link rel="canonical" href="https://sukargreenenergy.com/about-us" />
-     <!-- favicon logo -->
-    <link rel="icon" type="image/png" href="favicon.png">
-
     <!-- Google Fonts: Lora -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,124 +35,132 @@
             }
         }
     </script>
-    <style>
-        body {
-            background-color: #F8F8F8;
-            color: #333333;
-            font-family: 'Lora', 'Georgia', 'serif';
-            font-weight: 400;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Lora', 'Georgia', 'serif';
-            font-weight: 700;
-            color: #0A1931;
-        }
-        .nav-link.active {
-            color: #2E7D32;
-            position: relative;
-        }
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #2E7D32;
-        }
-        
-        .nav-link-mobile.active {
-            color: #84CC16 !important;
-        }
-        .prose h1.page-title {
-             color: #FFFFFF;
-             text-align: center;
-             margin-bottom: 0;
-        }
-        
-        /* Custom style for the image container to handle overlay transition */
-        .image-overlay-container {
-            position: relative;
-            overflow: hidden; /* Ensures the image and overlay stay within bounds */
-        }
+<style>
+    body {
+        background-color: #F8F8F8;
+        color: #333333;
+        font-family: 'Lora', 'Georgia', 'serif';
+        font-weight: 400;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Lora', 'Georgia', 'serif';
+        font-weight: 700;
+        color: #0A1931;
+    }
+    .nav-link.active {
+        color: #2E7D32;
+        position: relative;
+    }
+    .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #2E7D32;
+    }
+    
+    .nav-link-mobile.active {
+        color: #84CC16 !important;
+    }
+    .prose h1.page-title {
+         color: #FFFFFF;
+         text-align: center;
+         margin-bottom: 0;
+    }
+    
+    /* Custom style for the image container to handle overlay transition */
+    .image-overlay-container {
+        position: relative;
+        overflow: hidden; /* Ensures the image and overlay stay within bounds */
+    }
 
-        .image-overlay {
-            position: absolute;
-            inset: 0;
-            background-color: #0A1931; /* primary color */
-            opacity: 0.6; /* initial darkness - decreased from 0.75 */
-            transition: opacity 0.3s ease-in-out; /* smooth transition */
-        }
+    .image-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: #0A1931; /* primary color */
+        opacity: 0.6; /* initial darkness - decreased from 0.75 */
+        transition: opacity 0.3s ease-in-out; /* smooth transition */
+    }
 
-        .image-overlay-container:hover .image-overlay {
-            opacity: 0; /* fully transparent on hover */
-        }
+    .image-overlay-container:hover .image-overlay {
+        opacity: 0; /* fully transparent on hover */
+    }
 
-        /* --- Flip Card Styles --- */
-        .flip-card {
-            background-color: transparent;
-            width: 100%;
-            height: 360px; /* Adjusted height for content */
-            perspective: 1000px; /* 3D effect */
-            font-family: 'Lora', 'Georgia', 'serif';
-        }
+    /* --- Flip Card Styles --- */
+    .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 360px; /* Adjusted height for content */
+        perspective: 1000px; /* 3D effect */
+        font-family: 'Lora', 'Georgia', 'serif';
+    }
 
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
 
-        /* Flip on hover */
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
+    /* Flip on hover */
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
 
-        /* Front and back card styling */
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden; /* Safari */
-            backface-visibility: hidden;
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1.5rem; /* p-6 */
-        }
+    /* Front and back card styling */
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+        border-radius: 0.5rem; /* rounded-lg */
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem; /* p-6 */
+    }
 
-        .flip-card-back {
-            transform: rotateY(180deg);
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
+    .flip-card-back {
+        transform: rotateY(180deg);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
 
-        .flip-card-back h3 {
-            font-weight: bold;
-            background: linear-gradient(90deg, #2E7D32, #84CC16);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    .flip-card-back h3 {
+        font-weight: bold;
+        background: linear-gradient(90deg, #2E7D32, #84CC16);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 
-        .flip-card-back a {
-            color: #F8F8F8;
-            transition: color 0.3s;
-        }
+    .flip-card-back a {
+        color: #F8F8F8;
+        transition: color 0.3s;
+    }
 
-        .flip-card-back a:hover {
-            color: #84CC16;
-        }
-    </style>
+    .flip-card-back a:hover {
+        color: #84CC16;
+    }
+
+    /* ✅ Consistent container padding fix */
+    .container {
+        padding-left: 1rem !important;  /* 16px */
+        padding-right: 1rem !important; /* 16px */
+        max-width: 1280px !important;
+    }
+</style>
+
 </head>
 <body class="bg-secondary font-body">
 
@@ -233,9 +227,9 @@
                     </div>
                     <div>
                         <h2 class="text-3xl font-bold mb-4">Our Story</h2>
-                        <p class="text-text-dark mb-6 text-lg leading-relaxed">Sukar Green Energy was founded with a clear goal: to become the most reliable and sought-after contractor in the solar and building construction sectors. As a new company, we bring energy, focus, and a modern approach to every project we undertake. Our early success is a testament to our skilled team and our commitment to excellence from day one.</p>
+                        <p class="text-text-dark mb-6 text-lg leading-relaxed">Sukar Constructions was founded with a clear goal: to become the most reliable and sought-after contractor in the solar and building construction sectors. As a new company, we bring energy, focus, and a modern approach to every project we undertake. Our early success is a testament to our skilled team and our commitment to excellence from day one.</p>
                         <h2 class="text-3xl font-bold mb-4">Our Commitment to Quality & Safety</h2>
-                        <p class="text-text-dark text-lg leading-relaxed">At Sukar Green Energy, good quality and safety are the twin pillars of our operations. We believe that a successful project is not just one that is completed on time, but one that is built to last and ensures the well-being of everyone involved. We adhere to the strictest safety protocols and implement rigorous quality checks at every stage of our work.</p>
+                        <p class="text-text-dark text-lg leading-relaxed">At Sukar Constructions, good quality and safety are the twin pillars of our operations. We believe that a successful project is not just one that is completed on time, but one that is built to last and ensures the well-being of everyone involved. We adhere to the strictest safety protocols and implement rigorous quality checks at every stage of our work.</p>
                     </div>
                 </div>
             </div>
@@ -268,7 +262,7 @@
                             <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front">
-                                        <img src="https://placehold.co/200x200/0A1931/F8F8F8?text=Sudhakar+C" alt="Sudhakar Chavan" class="w-32 h-32 rounded-lg mx-auto mb-4 object-cover border-4 border-success">
+                                        <img src="sudhakar1.png" alt="Sudhakar Chavan" class="w-32 h-32 rounded-lg mx-auto mb-4 object-cover border-4 border-success">
                                         <h3 class="text-2xl font-bold">Sudhakar Chavan</h3>
                                         <p class="text-success font-semibold mb-2">Co-founder, Head of Finance & HSE</p>
                                         <p class="text-text-dark text-sm px-4">Sudhakar oversees our financial health and ensures a safe and compliant working environment.</p>
