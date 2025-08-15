@@ -7,8 +7,6 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-         <!-- favicon logo -->
-    <link rel="icon" type="image/png" href="favicon.png">
     
     <!-- Google Fonts: Lora -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,59 +35,67 @@
             }
         }
     </script>
-    <style>
-        body {
-            background-color: #F8F8F8;
-            color: #333333;
-            font-family: 'Lora', 'Georgia', 'serif';
-            font-weight: 400;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Lora', 'Georgia', 'serif';
-            font-weight: 700;
-            color: #0A1931;
-        }
-        .nav-link.active {
-            color: #2E7D32;
-            position: relative;
-        }
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #2E7D32;
-        }
-        
-        .nav-link-mobile.active {
-            color: #84CC16 !important;
-        }
-        .prose h1.page-title {
-             color: #FFFFFF;
-             text-align: center;
-             margin-bottom: 0;
-        }
-        
-        /* Custom style for the image container to handle overlay transition */
-        .image-overlay-container {
-            position: relative;
-            overflow: hidden; /* Ensures the image and overlay stay within bounds */
-        }
+<style>
+    body {
+        background-color: #F8F8F8;
+        color: #333333;
+        font-family: 'Lora', 'Georgia', 'serif';
+        font-weight: 400;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Lora', 'Georgia', 'serif';
+        font-weight: 700;
+        color: #0A1931;
+    }
+    .nav-link.active {
+        color: #2E7D32;
+        position: relative;
+    }
+    .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #2E7D32;
+    }
+    
+    .nav-link-mobile.active {
+        color: #84CC16 !important;
+    }
+    .prose h1.page-title {
+         color: #FFFFFF;
+         text-align: center;
+         margin-bottom: 0;
+    }
+    
+    /* Custom style for the image container to handle overlay transition */
+    .image-overlay-container {
+        position: relative;
+        overflow: hidden; /* Ensures the image and overlay stay within bounds */
+    }
 
-        .image-overlay {
-            position: absolute;
-            inset: 0;
-            background-color: #0A1931; /* primary color */
-            opacity: 0.6; /* initial darkness - decreased from 0.75 */
-            transition: opacity 0.3s ease-in-out; /* smooth transition */
-        }
+    .image-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: #0A1931; /* primary color */
+        opacity: 0.6; /* initial darkness - decreased from 0.75 */
+        transition: opacity 0.3s ease-in-out; /* smooth transition */
+    }
 
-        .image-overlay-container:hover .image-overlay {
-            opacity: 0; /* fully transparent on hover */
-        }
-    </style>
+    .image-overlay-container:hover .image-overlay {
+        opacity: 0; /* fully transparent on hover */
+    }
+
+    /* ✅ Consistent container padding fix */
+    .container {
+        padding-left: 1rem !important;  /* 16px */
+        padding-right: 1rem !important; /* 16px */
+        max-width: 1280px !important;
+    }
+</style>
+
 </head>
 <body class="bg-secondary font-body">
 
