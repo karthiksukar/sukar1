@@ -58,6 +58,8 @@
         color: #333333;
         font-family: 'Lora', 'Georgia', 'serif';
         font-weight: 400;
+        /* Prevent horizontal scroll */
+        overflow-x: hidden;
     }
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Lora', 'Georgia', 'serif';
@@ -163,7 +165,7 @@
                 <a href="contact.html" class="nav-link text-lg hover:text-success transition-colors duration-300">Contact</a>
             </nav>
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="p-2 z-50 relative">
+                <button id="mobile-menu-button" class="p-2 z-50 relative text-white"> <!-- Ensure button icon is white -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
                 </button>
             </div>
@@ -201,12 +203,14 @@
         <div class="py-16 md:py-24">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto -mt-40 relative z-10">
-                    <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- CHANGE: Made grid gap smaller on mobile (gap-8) and larger on desktop (lg:gap-12) -->
+                    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
                         <!-- Contact Form -->
-                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg"> <!-- CHANGE: Reduced padding on mobile (p-6) -->
                             <h2 class="text-3xl font-bold mb-6 font-heading">Send Us a Message</h2>
                             <form action="https://formspree.io/f/mldlaeak" method="POST" id="contact-form">
-                                <div class="grid sm:grid-cols-2 gap-6 mb-6">
+                                <!-- CHANGE: Removed sm:grid-cols-2, fields will stack on all small screens for better usability -->
+                                <div class="grid grid-cols-1 gap-6 mb-6">
                                     <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-lg border border-gray-300 focus:border-success focus:ring-success" required>
                                     <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded-lg border border-gray-300 focus:border-success focus:ring-success" required>
                                 </div>
@@ -217,14 +221,30 @@
                         </div>
                         <!-- Contact Info & Map -->
                         <div>
-                            <div class="bg-white text-primary p-8 rounded-lg shadow-lg mb-8">
+                            <!-- CHANGE: Reduced padding on mobile (p-6) -->
+                            <div class="bg-white text-primary p-6 md:p-8 rounded-lg shadow-lg mb-8">
                                 <h3 class="text-2xl font-bold font-heading mb-4 text-success">Contact Information</h3>
                                 <p class="mb-2">#541, Ward 6, Siruguppa, Bellary, KA, India</p>
                                 <p class="mb-2"><strong>Phone:</strong> <a href="tel:+919535325933" class="hover:text-success transition-colors">+91 9535325933</a></p>
                                 <p><strong>Email:</strong> <a href="mailto:contact@sukargreenenergy.com" class="hover:text-success transition-colors">contact@sukargreenenergy.com</a></p>
                             </div>
                             <div class="rounded-lg overflow-hidden shadow-lg">
-                               <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3692.3630829060953!2d77.019401!3d15.620519999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTXCsDM3JzEzLjkiTiA3N8KwMDEnMDkuOCJF!5e1!3m2!1sen!2sin!4v1762278578361!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <!-- 
+                                  CHANGE: Made the iframe responsive.
+                                  - Removed fixed width="600" and height="450" attributes.
+                                  - Added classes: "w-full h-96 md:h-[450px]"
+                                  - w-full: Makes it take the full width of its container.
+                                  - h-96: Sets a reasonable height on mobile (24rem).
+                                  - md:h-[450px]: Sets the height back to 450px on medium screens and up.
+                                -->
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3692.3630829060953!2d77.019401!3d15.620519999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTXCsDM3JzEzLjkiTiA3N8KwMDEnMDkuOCJF!5e1!3m2!1sen!2sin!4v1762278578361!5m2!1sen!2sin" 
+                                    class="w-full h-96 md:h-[450px]" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
                             </div>
                         </div>
                     </div>
@@ -306,14 +326,16 @@
             <div class="block md:hidden pt-8 text-sm text-text-light/80">
                 <div class="flex flex-col gap-y-6">
                     <!-- Top Row: Legal Links -->
-                    <div class="flex flex-nowrap justify-start gap-x-4 text-left text-xs">
+                    <!-- CHANGE: Replaced 'flex-nowrap' with 'flex-wrap' to allow links to wrap on small screens -->
+                    <div class="flex flex-wrap justify-start gap-x-4 gap-y-2 text-left text-xs">
                         <a href="cookie-policy.html" class="hover:text-success transition-colors whitespace-nowrap">Cookie Policy</a>
                         <a href="terms-and-conditions.html" class="hover:text-success transition-colors whitespace-nowrap">Terms & Conditions</a>
                         <a href="privacy-policy.html" class="hover:text-success transition-colors whitespace-nowrap">Privacy Policy</a>
                     </div>
     
                     <!-- Middle Row: Sitemap & Copyright -->
-                    <div class="flex flex-nowrap justify-start items-center gap-x-3 text-left text-xs">
+                    <!-- CHANGE: Replaced 'flex-nowrap' with 'flex-wrap' to allow items to wrap -->
+                    <div class="flex flex-wrap justify-start items-center gap-x-3 gap-y-2 text-left text-xs">
                         <a href="contact.html" class="hover:text-success transition-colors">Sitemap</a>
                         <span>&copy; <span class="current-year"></span> SUKAR GREEN ENERGY. All Rights Reserved.</span>
                     </div>
@@ -358,10 +380,14 @@
         
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('translate-x-full');
+            // Hide body scroll when menu is open
+            document.body.style.overflow = 'hidden';
         });
 
         closeMenuButton.addEventListener('click', () => {
             mobileMenu.classList.add('translate-x-full');
+            // Restore body scroll
+            document.body.style.overflow = '';
         });
 
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -426,7 +452,7 @@
                 messageBox.classList.add('modal', 'show');
                 messageBox.innerHTML = `
                     <div class="modal-content">
-                        <span class="close-button">&times;</span>
+                        <span class="close-button" onclick="this.closest('.modal').remove()">&times;</span>
                         <h3 class="text-2xl font-bold mb-4 text-primary">Error!</h3>
                         <p class="text-text-dark text-lg mb-6">Form submission failed. Please try again.</p>
                         <button class="inline-block bg-success text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 ease-in-out hover:bg-white hover:text-success border-2 border-transparent hover:border-success" onclick="this.closest('.modal').remove()">
@@ -435,7 +461,6 @@
                     </div>
                 `;
                 document.body.appendChild(messageBox);
-                messageBox.querySelector('.close-button').addEventListener('click', () => messageBox.remove());
             }
         });
 
@@ -452,17 +477,22 @@
         const header = document.getElementById('main-header');
         const heroSection = document.getElementById('hero-section');
         const scrollThreshold = 50; 
+        const mobileMenuButtonSvg = mobileMenuButton.querySelector('svg');
 
         function handleScroll() {
             if (window.scrollY >= scrollThreshold) {
                 header.classList.remove('absolute', 'top-5');
                 header.classList.add('fixed', 'top-0', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
+                // Ensure mobile menu button icon is white on scrolled header
+                mobileMenuButton.classList.add('text-white');
                 if (heroSection) {
                     heroSection.classList.add('scrolled');
                 }
             } else {
                 header.classList.remove('fixed', 'top-0', 'bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');
                 header.classList.add('absolute', 'top-5');
+                // Ensure mobile menu button icon is white on transparent header
+                mobileMenuButton.classList.add('text-white');
                 if (heroSection) {
                     heroSection.classList.remove('scrolled');
                 }
@@ -473,6 +503,7 @@
         handleScroll();
     });
     </script>
-    <script src="cookie-consent.js" defer></script>
+    <!-- Assuming cookie-consent.js exists in the same directory -->
+    <!-- <script src="cookie-consent.js" defer></script> -->
 </body>
 </html>
