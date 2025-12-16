@@ -8,21 +8,21 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Canonical URL -->
-<link rel="canonical" href="https://sukargreenenergy.com/projects" />
+    <link rel="canonical" href="https://sukargreenenergy.com/projects" />
 
-<!-- Organization Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Sukar Green Energy",
-  "url": "https://sukargreenenergy.com",
-  "logo": "https://sukargreenenergy.com/favicon.png"
-}
-</script>
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sukar Green Energy",
+      "url": "https://sukargreenenergy.com",
+      "logo": "https://sukargreenenergy.com/favicon.png"
+    }
+    </script>
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="favicon.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
     
     <!-- Google Fonts: Lora -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,66 +51,66 @@
             }
         }
     </script>
-<style>
-    body {
-        background-color: #F8F8F8;
-        color: #333333;
-        font-family: 'Lora', 'Georgia', 'serif';
-        font-weight: 400;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Lora', 'Georgia', 'serif';
-        font-weight: 700;
-        color: #0A1931;
-    }
-    .nav-link.active {
-        color: #2E7D32;
-        position: relative;
-    }
-    .nav-link.active::after {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #2E7D32;
-    }
-    
-    .nav-link-mobile.active {
-        color: #84CC16 !important;
-    }
-    .prose h1.page-title {
-         color: #FFFFFF;
-         text-align: center;
-         margin-bottom: 0;
-    }
-    
-    /* Custom style for the image container to handle overlay transition */
-    .image-overlay-container {
-        position: relative;
-        overflow: hidden; /* Ensures the image and overlay stay within bounds */
-    }
+    <style>
+        body {
+            background-color: #F8F8F8;
+            color: #333333;
+            font-family: 'Lora', 'Georgia', 'serif';
+            font-weight: 400;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', 'Georgia', 'serif';
+            font-weight: 700;
+            color: #0A1931;
+        }
+        .nav-link.active {
+            color: #2E7D32;
+            position: relative;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #2E7D32;
+        }
+        
+        .nav-link-mobile.active {
+            color: #84CC16 !important;
+        }
+        .prose h1.page-title {
+             color: #FFFFFF;
+             text-align: center;
+             margin-bottom: 0;
+        }
+        
+        /* Custom style for the image container to handle overlay transition */
+        .image-overlay-container {
+            position: relative;
+            overflow: hidden; /* Ensures the image and overlay stay within bounds */
+        }
 
-    .image-overlay {
-        position: absolute;
-        inset: 0;
-        background-color: #0A1931; /* primary color */
-        opacity: 0.6; /* initial darkness - decreased from 0.75 */
-        transition: opacity 0.3s ease-in-out; /* smooth transition */
-    }
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: #0A1931; /* primary color */
+            opacity: 0.6; /* initial darkness - decreased from 0.75 */
+            transition: opacity 0.3s ease-in-out; /* smooth transition */
+        }
 
-    .image-overlay-container:hover .image-overlay {
-        opacity: 0; /* fully transparent on hover */
-    }
+        .image-overlay-container:hover .image-overlay {
+            opacity: 0; /* fully transparent on hover */
+        }
 
-    /* ✅ Consistent container padding fix */
-    .container {
-        padding-left: 1rem !important;  /* 16px */
-        padding-right: 1rem !important; /* 16px */
-        max-width: 1280px !important;
-    }
-</style>
+        /* ✅ Consistent container padding fix */
+        .container {
+            padding-left: 1rem !important;  /* 16px */
+            padding-right: 1rem !important; /* 16px */
+            max-width: 1280px !important;
+        }
+    </style>
 
 </head>
 <body class="bg-secondary font-body">
@@ -167,91 +167,133 @@
             </div>
         </div>
 
-       <div class="container mx-auto px-4 py-12">
-        <h1 class="text-4xl font-bold text-center mb-12 text-gray-800">Ongoing Project</h1>
+        <div class="container mx-auto px-4 py-12">
+            <h1 class="text-4xl font-bold text-center mb-12 text-gray-800">Ongoing Projects</h1>
 
-        <div class="grid grid-cols-1 lg:grid-cols-1 gap-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+                <!-- NEW Ongoing Project: Jackson Green -->
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl flex flex-col">
+                    <h2 class="text-3xl font-bold mb-1">67.5 MWp / 50 MW Solar Power Project, Bellary, KA</h2>
+                    <p class="text-success font-semibold mb-2">Category: Solar Power Project | Role: Sub-Contractor (Jackson Green)</p>
+                    <p class="text-sm text-gray-500 mb-6">Duration: <strong>December 2025 – Present</strong></p>
+
+                    <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container mb-8">
+                        <img src="solar-bellary.webp" alt="Solar Project Bellary" class="w-full h-80 object-cover rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1931/FFFFFF?text=Bellary+Solar+Project'">
+                        <div class="image-overlay rounded-lg"></div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">Project Contribution</h3>
+                    <p class="text-text-dark text-lg leading-relaxed">
+                        We are currently executing works for <strong>Jackson Green</strong> at the 67.5 MWp / 50 MW Solar Power Project located in Yarringaligi Village, Kurugodu Taluk, Bellary District, Karnataka.
+                        Our specific scope involves <strong>13.2 MW of Piling works and the construction of the ICR (Inverter Control Room)</strong>.
+                        Work commenced in December 2025 and is currently in progress.
+                    </p>
+                </div>
             
-            <!-- Ongoing Project: AYANA -->
-            <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl flex flex-col">
-                <h2 class="text-3xl font-bold mb-1">250 MWP AYANA Project, Kadapa, AP</h2>
-                <p class="text-success font-semibold mb-2">Category: Ground-Mounted Solar | Role: Sub-Contractor</p>
-                <p class="text-sm text-gray-500 mb-6">Duration: <strong>October 2025 – Present</strong></p>
+                <!-- Ongoing Project: Talai Village, Jalgaon -->
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl flex flex-col">
+                    <h2 class="text-3xl font-bold mb-1">08 MW Grid Connected Solar PV Plant, Talai Village, Jalgaon Dist.</h2>
+                    <p class="text-success font-semibold mb-2">Category: Solar PV Plant | Role: Sub-Contractor (Megha Engineering Infrastructures Ltd)</p>
+                    <p class="text-sm text-gray-500 mb-6">Status: <strong>Ongoing</strong></p>
 
-                <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container mb-8">
-                    <img src="Ayana-kadapa.webp" alt="AYANA Solar Project" class="w-full h-80 object-cover rounded-lg">
-                    <div class="image-overlay rounded-lg"></div>
+                    <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container mb-8">
+                        <img src="megha-piling.webp" alt="Solar Project Jalgaon" class="w-full h-80 object-cover rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1931/FFFFFF?text=Jalgaon+Solar+Project'">
+                        <div class="image-overlay rounded-lg"></div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">Project Contribution</h3>
+                    <p class="text-text-dark text-lg leading-relaxed">
+                        We are currently executing comprehensive civil and structural works for <strong>Megha Engineering Infrastructures Limited</strong>. 
+                        Our scope of work includes <strong>Piling, MCR (Main Control Room) Building, ICR (Inverter Control Room), MMS (Module Mounting Structure), and Boundary Wall construction</strong>.
+                        <br><br>
+                        <strong>Highlight:</strong> We successfully executed <strong>4 MW of piling work within just 10 days</strong>, demonstrating exceptional speed and project management efficiency.
+                    </p>
+                </div>
+            
+                <!-- Ongoing Project: AYANA -->
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl flex flex-col">
+                    <h2 class="text-3xl font-bold mb-1">250 MWP AYANA Project, Kadapa, AP</h2>
+                    <p class="text-success font-semibold mb-2">Category: Ground-Mounted Solar | Role: Sub-Contractor</p>
+                    <p class="text-sm text-gray-500 mb-6">Duration: <strong>October 2025 – Present</strong></p>
+
+                    <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container mb-8">
+                        <img src="Ayana-kadapa.webp" alt="AYANA Solar Project" class="w-full h-80 object-cover rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1931/FFFFFF?text=Ayana+Solar+Project'">
+                        <div class="image-overlay rounded-lg"></div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4">Project Contribution</h3>
+                    <p class="text-text-dark text-lg leading-relaxed">
+                        We are currently engaged in the 250 MWP AYANA Solar Project at Kadapa, Andhra Pradesh.
+                        Our ongoing contribution focuses on <strong>30 MW MMS (Module Mounting Structure) operations under AI INFRA.</strong>,
+                        maintaining a strong emphasis on <strong>quality, safety, and precision</strong> throughout the entire execution process.
+                        The project is progressing as per schedule with strict adherence to technical and environmental standards.
+                    </p>
                 </div>
 
-                <h3 class="text-2xl font-bold mb-4">Project Contribution</h3>
-                <p class="text-text-dark text-lg leading-relaxed">
-                    We are currently engaged in the 250 MWP AYANA Solar Project at Kadapa, Andhra Pradesh.
-                    Our ongoing contribution focuses on <strong>30 MW MMS (Module Mounting Structure) operations under AI INFRA.</strong>,
-                    maintaining a strong emphasis on <strong>quality, safety, and precision</strong> throughout the entire execution process.
-                    The project is progressing as per schedule with strict adherence to technical and environmental standards.
-                </p>
             </div>
         </div>
-    </div>
-       <div class="bg-gray-100 py-8">
-        <h1 class="text-4xl font-bold text-center text-gray-800">Projects Completed</h1>
-    </div>
+        
+        <div class="bg-gray-100 py-8">
+            <h1 class="text-4xl font-bold text-center text-gray-800">Projects Completed</h1>
+        </div>
+        
         <!-- Projects Content -->
-       <div class="container mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <!-- Project 1 -->
-        <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl flex flex-col">
-            <h2 class="text-3xl font-bold mb-1">100 MWP CTRLS Project, Wardha, MH</h2>
-            <p class="text-success font-semibold mb-2">Category: Ground-Mounted Solar | Role: Sub-Contractor (INSOLAR)</p>
-            <p class="text-sm text-gray-500 mb-6">Dates: June 2024 – September 2024</p>
-            <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container mb-8">
-                <img src="solar5.webp" alt="Solar Park Civil Works" class="w-full h-80 object-cover rounded-lg">
-                <div class="image-overlay rounded-lg"></div>
-            </div>
-            <h3 class="text-2xl font-bold mb-4">Our Contributions to the Project</h3>
-            <p class="text-text-dark text-lg leading-relaxed">
-                Executed 20 MW of piling and MMS (Module Mounting Structure) works under INSOLAR.
-                Ensured a strong focus on quality and safety throughout the process, delivering the project on time
-                with precision and adherence to client specifications.
-            </p>
-        </div>
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl flex flex-col">
+                    <h2 class="text-3xl font-bold mb-1">100 MWP CTRLS Project, Wardha, MH</h2>
+                    <p class="text-success font-semibold mb-2">Category: Ground-Mounted Solar | Role: Sub-Contractor (INSOLAR)</p>
+                    <p class="text-sm text-gray-500 mb-6">Dates: June 2024 – September 2024</p>
+                    <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container mb-8">
+                        <img src="solar5.webp" alt="Solar Park Civil Works" class="w-full h-80 object-cover rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1931/FFFFFF?text=Solar+Project+Wardha'">
+                        <div class="image-overlay rounded-lg"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Our Contributions to the Project</h3>
+                    <p class="text-text-dark text-lg leading-relaxed">
+                        Executed 20 MW of piling and MMS (Module Mounting Structure) works under INSOLAR.
+                        Ensured a strong focus on quality and safety throughout the process, delivering the project on time
+                        with precision and adherence to client specifications.
+                    </p>
+                </div>
 
-        <!-- Project 2 -->
-        <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl flex flex-col">
-            <h2 class="text-3xl font-bold mb-1">75 MWP SUNSOURCE Project, Koppal, KA</h2>
-            <p class="text-success font-semibold mb-2">Category: Ground-Mounted Solar | Role: Sub-Contractor (Aditya Solar EPC)</p>
-            <p class="text-sm text-gray-500 mb-6">Dates: March 2024 – June 2024</p>
-            <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container mb-8">
-                <img src="solar6.webp" alt="Solar Plant Construction" class="w-full h-80 object-cover rounded-lg">
-                <div class="image-overlay rounded-lg"></div>
-            </div>
-            <h3 class="text-2xl font-bold mb-4">Our Contributions to the Project</h3>
-            <p class="text-text-dark text-lg leading-relaxed">
-                Executed 25 MW of piling works under Aditya Solar EPC.
-                Maintained strong focus on safety, quality control, and precise alignment of structures.
-                Delivered the project efficiently within the stipulated timeline.
-            </p>
-        </div>
+                <!-- Project 2 -->
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl flex flex-col">
+                    <h2 class="text-3xl font-bold mb-1">75 MWP SUNSOURCE Project, Koppal, KA</h2>
+                    <p class="text-success font-semibold mb-2">Category: Ground-Mounted Solar | Role: Sub-Contractor (Aditya Solar EPC)</p>
+                    <p class="text-sm text-gray-500 mb-6">Dates: March 2024 – June 2024</p>
+                    <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container mb-8">
+                        <img src="solar6.webp" alt="Solar Plant Construction" class="w-full h-80 object-cover rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1931/FFFFFF?text=Solar+Project+Koppal'">
+                        <div class="image-overlay rounded-lg"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Our Contributions to the Project</h3>
+                    <p class="text-text-dark text-lg leading-relaxed">
+                        Executed 25 MW of piling works under Aditya Solar EPC.
+                        Maintained strong focus on safety, quality control, and precise alignment of structures.
+                        Delivered the project efficiently within the stipulated timeline.
+                    </p>
+                </div>
 
-        <!-- Project 3 -->
-        <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl flex flex-col">
-            <h2 class="text-3xl font-bold mb-1">10 MWP INFINITY Project, Jalna, MH</h2>
-            <p class="text-success font-semibold mb-2">Category: Ground-Mounted Solar | Role: Sub-Contractor</p>
-            <p class="text-sm text-gray-500 mb-6">Dates: October 2023 – January 2024</p>
-            <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container mb-8">
-                <img src="solar1.webp" alt="Solar Mounting Structure Assembly" class="w-full h-80 object-cover rounded-lg">
-                <div class="image-overlay rounded-lg"></div>
+                <!-- Project 3 -->
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl flex flex-col">
+                    <h2 class="text-3xl font-bold mb-1">10 MWP INFINITY Project, Jalna, MH</h2>
+                    <p class="text-success font-semibold mb-2">Category: Ground-Mounted Solar | Role: Sub-Contractor</p>
+                    <p class="text-sm text-gray-500 mb-6">Dates: October 2023 – January 2024</p>
+                    <div class="rounded-lg shadow-xl w-full h-full object-cover image-overlay-container mb-8">
+                        <img src="solar1.webp" alt="Solar Mounting Structure Assembly" class="w-full h-80 object-cover rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1931/FFFFFF?text=Solar+Project+Jalna'">
+                        <div class="image-overlay rounded-lg"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Our Contributions to the Project</h3>
+                    <p class="text-text-dark text-lg leading-relaxed">
+                        Executed 10 MW of ICR (Inverter Control Room), piling, and MMS works.
+                        Ensured a strong focus on quality and safety, maintaining precise alignment
+                        and achieving on-time execution to deliver a reliable solar infrastructure for our client.
+                    </p>
+                </div>
             </div>
-            <h3 class="text-2xl font-bold mb-4">Our Contributions to the Project</h3>
-            <p class="text-text-dark text-lg leading-relaxed">
-                Executed 10 MW of ICR (Inverter Control Room), piling, and MMS works.
-                Ensured a strong focus on quality and safety, maintaining precise alignment
-                and achieving on-time execution to deliver a reliable solar infrastructure for our client.
-            </p>
         </div>
-    </div>
-</div>
-</main>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-primary text-white pt-16 pb-8">
@@ -315,7 +357,7 @@
                 </div>
                 <!-- Designer Credit -->
                 <div>
-                     <p class="designer-credit">
+                      <p class="designer-credit">
                         Designed by <a href="https://nehkarsolutions.com" target="_blank" rel="noopener noreferrer" class="text-white font-semibold hover:text-light-green transition-colors">Nehkar Solutions</a>
                     </p>
                 </div>
